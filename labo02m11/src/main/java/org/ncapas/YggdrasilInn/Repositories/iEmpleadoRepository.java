@@ -1,4 +1,4 @@
-package org.ncapas.YggdrasilInn.Repository;
+package org.ncapas.YggdrasilInn.Repositories;
 
 import org.ncapas.YggdrasilInn.Domain.Entities.Empleado;
 import jakarta.transaction.Transactional;

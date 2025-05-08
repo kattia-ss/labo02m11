@@ -1,8 +1,7 @@
-package org.ncapas.YggdrasilInn.Repository;
+package org.ncapas.YggdrasilInn.Repositories;
 
 import org.ncapas.YggdrasilInn.Domain.Entities.Color;
 import jakarta.transaction.Transactional;
-import org.ncapas.YggdrasilInn.Domain.Entities.Empleado;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
