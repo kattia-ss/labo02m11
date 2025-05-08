@@ -13,6 +13,8 @@ public class Reserva {
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
 
+    private boolean estado;
+
     @ManyToOne
     private Huesped huesped;
 
@@ -22,6 +24,4 @@ public class Reserva {
     @ManyToOne
     private SalonEvento salon;
 
-    @OneToOne(mappedBy = "reserva", cascade = CascadeType.ALL)
-    private ComprobantePago comprobante;
 }

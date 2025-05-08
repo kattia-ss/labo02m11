@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,12 +11,14 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Sucursal {
+public class Detalle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idSucursal;
+    private Long idDetalle;
 
-    private String nombreSucursal;
-    private String direccion;
+    private String nombre;
+
+    @OneToMany(mappedBy = "detalle")
+    private List<Habitacion> habitaciones;
 
 }

@@ -1,23 +1,24 @@
 package org.ncapas.YggdrasilInn.Domain.Entities;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Sucursal {
+public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idSucursal;
+    private Long idRol;
 
-    private String nombreSucursal;
-    private String direccion;
+    private String nombreRol;
 
+    @OneToMany(mappedBy = "rol")
+    private List<Usuario> usuarios;
 }

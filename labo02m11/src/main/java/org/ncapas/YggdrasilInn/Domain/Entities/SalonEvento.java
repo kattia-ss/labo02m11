@@ -19,11 +19,5 @@ public class SalonEvento {
     private int capacidad;
     private String ornamentos;
 
-    @ManyToOne
-    @JoinColumn(name = "id_piso", nullable = false, foreignKey = @ForeignKey(name = "FK_salon_piso"))
-    private Piso piso;
-
-    @OneToMany(mappedBy = "salon")
-    private List<Reserva> reservas;
 }
 
