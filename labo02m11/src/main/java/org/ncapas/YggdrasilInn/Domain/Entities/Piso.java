@@ -36,4 +36,6 @@ public class Piso {
     private List<Color> botones = new ArrayList<>();
 
     @OneToMany(mappedBy = "piso", cascade = CascadeType.ALL)
-    private List<Habitacion> habitaciones = new ArrayList<>();}
+    private List<Habitacion> habitaciones = new ArrayList<>();
+
+}
