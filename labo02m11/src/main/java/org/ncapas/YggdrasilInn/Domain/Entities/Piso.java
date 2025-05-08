@@ -17,15 +17,23 @@ public class Piso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPiso;
 
+    private String nombrePiso;
     private int numero;
 
     @ManyToOne
     @JoinColumn(name = "id_sucursal", nullable = false, foreignKey = @ForeignKey(name = "FK_piso_sucursal"))
     private Sucursal sucursal;
 
-    @OneToMany(mappedBy = "piso")
-    private List<Habitacion> habitaciones = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "id_salon_evento", nullable = false, foreignKey = @ForeignKey(name = "FK_piso_salon_evento"))
+    private SalonEvento salon;
+
+    @ManyToOne
+    @JoinColumn(name = "id_color", nullable = false, foreignKey = @ForeignKey(name = "FK_piso_color"))
+    private Color color;
 
     @OneToMany(mappedBy = "piso")
-    private List<BotonAscensor> botones = new ArrayList<>();
-}
+    private List<Color> botones = new ArrayList<>();
+
+    @OneToMany(mappedBy = "piso", cascade = CascadeType.ALL)
+    private List<Habitacion> habitaciones = new ArrayList<>();}

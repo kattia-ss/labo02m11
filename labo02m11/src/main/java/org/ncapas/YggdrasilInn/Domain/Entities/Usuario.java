@@ -22,5 +22,9 @@ public abstract class Usuario {
     private String email;
     private String contraseña;
     private LocalDate fechaNacimiento;
+
+    @ManyToOne
+    @JoinColumn(name = "id_rol", nullable = false, foreignKey = @ForeignKey(name = "FK_usuario_rol"))
+    private Rol rol;
 }
 

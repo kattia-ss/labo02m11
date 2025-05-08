@@ -5,19 +5,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Sucursal {
+public class Color {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idSucursal;
+    private Long idColor;
 
-    private String nombreSucursal;
-    private String direccion;
+    private String tono;
+    private String hexadecimal; // hexadecimal color code
 
+    @ManyToOne
+    @JoinColumn(name = "id_piso", nullable = false, foreignKey = @ForeignKey(name = "FK_ID_PISO"))
+    private Piso piso;
 }
